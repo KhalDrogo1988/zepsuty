@@ -148,3 +148,16 @@ $wtr_translate['wtr_TranslateClassesSHTPassPrice']					= __( 'Price', WTR_THEME_
 $wtr_translate['wtr_TranslateClassesSHTSBSStep']					= __( 'Step', WTR_THEME_NAME );
 $wtr_translate['wtr_TranslateDailyScheduleSHTText']					= __( 'Symetrio', WTR_THEME_NAME );
 $wtr_translate['wtr_TranslateDailyScheduleSHTText2']				= __( 'Daily schedule', WTR_THEME_NAME );
+
+$wtr_translate['wtr_TranslateDailyScheduleMonth01']					= __( 'Jan', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth02']					= __( 'Feb', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth03']					= __( 'Mar', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth04']					= __( 'Apr', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth05']					= __( 'May', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth06']					= __( 'Jun', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth07']					= __( 'Jul', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth08']					= __( 'Aug', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth09']					= __( 'Sep', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth10']					= __( 'Oct', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth11']					= __( 'Nov', WTR_THEME_NAME );
+$wtr_translate['wtr_TranslateDailyScheduleMonth12']					= __( 'Dec', WTR_THEME_NAME );

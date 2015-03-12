@@ -396,7 +396,7 @@ if( ! function_exists( 'wtr_social_media' ) ){
 	} // end wtr_social_media
 }
 
-if( ! function_exists( 'wtr_first_contact' ) ){
+if( ! function_exists( 'wtr_header_section' ) ){
 
 	// drawing header sections
 	function wtr_header_section(){

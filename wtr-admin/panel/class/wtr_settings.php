@@ -53,6 +53,12 @@ if ( ! class_exists( 'WTR_Settings' ) ) {
 			// export setting
 			add_action( 'admin_init',array( &$this,'export_setting') );
 
+			// JS
+			add_action( 'wp_footer', array( &$this, 'load_js' ) );
+
+			// upload mimes
+			add_filter('upload_mimes', array( &$this, 'upload_mimes' ) );
+
 			// get shortcode list
 			$this->sht_list = get_option( self::WP_SHT_LIST_OPT_NAME );
 
@@ -78,6 +84,49 @@ if ( ! class_exists( 'WTR_Settings' ) ) {
 			$custom_style	= '';
 			$opt			= $this->opt_a;
 
+			//custom fonts
+			$custom_fonts		= array( 'wtrFontsCustom','wtrFontsCustom2' );
+			$custom_fonts_css	= '';
+			$custom_fonts_arg	= '';
+
+			foreach ( $custom_fonts as $custom_font ) {
+
+				if( ! empty( $opt[ $custom_font . 'FontName'] ) AND (
+					! empty( $opt[ $custom_font . 'FontWoff'] ) OR
+					! empty( $opt[ $custom_font . 'FontEot'] ) OR
+					! empty( $opt[ $custom_font . 'FontSvg'] ) OR
+					! empty( $opt[ $custom_font . 'FontTtf'] ) OR
+					! empty( $opt[ $custom_font . 'FontWoff'] )
+					) ){
+					$custom_fonts_css .= "@font-face { \n";
+					$custom_fonts_css .= "font-family: '" . $opt[ $custom_font . 'FontName'] ."';\n";
+
+					if( ! empty( $opt[ $custom_font . 'FontEot'] )){
+						$custom_fonts_css .= "src: url('" . $opt[ $custom_font . 'FontEot'] . "'); \n";
+						$custom_fonts_arg[ $custom_font ][]	= "url('" . $opt[ $custom_font . 'FontEot'] . "?#iefix') format('embedded-opentype')";
+					}
+
+					if( ! empty( $opt[ $custom_font . 'FontWoff'] )){
+						$custom_fonts_arg[ $custom_font ][] ="url('" . $opt[ $custom_font . 'FontWoff'] . "') format('woff')";
+					}
+
+					if( ! empty( $opt[ $custom_font . 'FontTtf'] )){
+						$custom_fonts_arg[ $custom_font ][] ="url('" . $opt[ $custom_font . 'FontTtf'] . "') format('truetype')";
+					}
+
+					if( ! empty( $opt[ $custom_font . 'FontSvg'] )){
+						$custom_fonts_arg[ $custom_font ][] = "url('" . $opt[ $custom_font . 'FontSvg'] . "#svgFontName') format('svg')";
+					}
+
+					$custom_fonts_css .= 'src: ' .implode( $custom_fonts_arg[ $custom_font ], ",\n"  );
+					$custom_fonts_css .= ";\n}\n\n";
+				}
+			}
+
+			if( ! empty( $custom_fonts_css ) ) {
+				$custom_style	.= "/* Custom Fonts */ \n\n" . $custom_fonts_css;
+			}
+
 			if( ! empty( $opt['wtr_custom_style_font_size'] ) AND is_array( $opt['wtr_custom_style_font_size'] ) ) {
 				$custom_style	.= "/* Fonts family */ \n\n" . implode("\n", $opt['wtr_custom_style_font_size'] );
 			}
@@ -89,6 +138,15 @@ if ( ! class_exists( 'WTR_Settings' ) ) {
 			return $custom_style;
 
 		}//save_css
+
+
+		function upload_mimes( $existing_mimes = array() ){
+			$existing_mimes['woff']	= 'font/woff';
+			$existing_mimes['ttf']	= 'font/ttf';
+			$existing_mimes['svg']	= 'font/svg';
+			$existing_mimes['eot']	= 'font/eot';
+			return $existing_mimes;
+		} // end upload_mimes
 
 
 		public function create_custom_css(){
@@ -301,6 +359,17 @@ if ( ! class_exists( 'WTR_Settings' ) ) {
 				wp_enqueue_style( 'google_fonts', $protocol . '://fonts.googleapis.com/css?family=' . $fonts . $subset );
 			}
 		}// end font_family
+
+
+		public function load_js(){
+
+			global $post_settings;
+
+			//Countdown translate
+			$sht_countdown_js ="var wtr_countdown_name = { y: '" . $post_settings['wtr_TranslateCountdownSHTYears'] . "', m : '" . $post_settings['wtr_TranslateCountdownSHTMonths'] . "', w : '" . $post_settings['wtr_TranslateCountdownSHTWeeks'] . "',d:'" . $post_settings['wtr_TranslateCountdownSHTDays'] . "' , 'h' : '" . $post_settings['wtr_TranslateCountdownSHTHours'] . "', m : '" . $post_settings['wtr_TranslateCountdownSHTMinutes']  . "', s : '" . $post_settings['wtr_TranslateCountdownSHTSeconds'] . "' }";
+			echo '<script type="text/javascript">' . $sht_countdown_js . '</script>';
+
+		} // end load_js
 
 
 		public function get_sht_list(){

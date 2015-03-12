@@ -45,13 +45,16 @@ if ( ! class_exists( 'WTR_Upload' ) ) {
 				$this->image_src	= $this->value;
 			}
 
-			if( !isset( $this->mod) ):?>
+			if( !isset( $this->mod)  OR ( $this->mod  == 'custom_font' ) ):?>
+			<?php
+				$mod_class = ( isset( $this->mod) AND $this->mod  == 'custom_font' ) ? 'wtrCustomFF' : '';
+			?>
 				<div class="wonsterFiled ">
 					<div class="wfDesc">
 						<div class="wfTitle"><?php echo $this->title?></div>
 						<div class="setDescNag"><?php echo $this->desc?></div>
 					</div>
-					<div class="wfSett">
+					<div class="wfSett <?php echo $mod_class; ?>">
 						<div class="wonsterUpload">
 							<div class="setCol-one-three">
 								<a href="" class="WonButton blue fileSelect wtr_admin_file_upload" default_size="<?php echo $this->default_size; ?>" data-editor="<?php $this->id; ?>" target_type="<?php echo $this->target_type; ?>" title_modal="<?php echo esc_attr( $this->title_modal ); ?>" filter_content="<?php echo $this->filter_content; ?>"> <?php _e('Select file', WTR_THEME_NAME ) ?> </a>

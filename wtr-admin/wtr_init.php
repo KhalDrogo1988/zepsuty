@@ -1259,7 +1259,7 @@ $wtr_FontsSize_1 = new WTR_Scroll( array(
 		'min' 			=> 8,
 		'max' 			=> 100,
 		'css'			=> array(
-			'selector'	=> '.wtrMainNavigation .wtrNaviCartItem a i, .wtrMainNavigation .wtrNaviItem .wtrNaviSearchItem div i, .wtrMainNavigation .wtrNaviItem > a',
+			'selector'	=> '.wtrMainNavigation .wtrNaviCartItem a i, .wtrMainNavigation .wtrNaviItem .wtrNaviSearchItem div i, .wtrMainNavigation .wtrNaviItem > a, .wtrMainNavigation .wtrNaviItem > .wtrNaviNoLink',
 			'style'		=> 'font-size',
 			'important'	=> true,
 			)
@@ -1606,6 +1606,169 @@ $wtrFontsGoogleFontSubset = new WTR_Text( array(
 		'allow'			=> 'all',
 	)
 );
+
+$wtrFontsCustomFontName = new WTR_Text( array(
+		'id'			=> 'wtrFontsCustomFontName',
+		'class'			=> '',
+		'title'			=> __( 'Custom Font | Name ', 'wtr_framework' ),
+		'desc'			=> __( "This name will be used in CSS declaration for example: </br> p { font-family: 'MyWebFont', Arial, sans-serif; }", 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => '',
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtrFontsCustomFontWoff = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustomFontWoff',
+					'title'			=> __( 'Custom Font | .woff', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'mod'			=> 'custom_font',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/woff',
+					   'target_type' => 'text',
+					 )
+			);
+
+$wtrFontsCustomFontTtf = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustomFontTtf',
+					'title'			=> __( 'Custom Font | .ttf', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/ttf',
+					   'target_type' => 'text',
+					 )
+			);
+
+
+$wtrFontsCustomFontSvg = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustomFontSvg',
+					'title'			=> __( 'Custom Font | .svg', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/svg',
+					   'target_type' => 'text',
+					 )
+			);
+
+$wtrFontsCustomFontEot = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustomFontEot',
+					'title'			=> __( 'Custom Font | .eot', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/eot',
+					   'target_type' => 'text',
+					 )
+			);
+
+$wtrFontsCustom2FontName = new WTR_Text( array(
+		'id'			=> 'wtrFontsCustom2FontName',
+		'class'			=> '',
+		'title'			=> __( 'Custom Font 2 | Name ', 'wtr_framework' ),
+				'desc'			=> __( "This name will be used in CSS declaration for example: </br> p { font-family: 'MyWebFont', Arial, sans-serif; }", 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => '',
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtrFontsCustom2FontWoff = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustom2FontWoff',
+					'title'			=> __( 'Custom Font 2 | .woff', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/woff',
+					   'target_type' => 'text',
+					 )
+			);
+
+$wtrFontsCustom2FontTtf = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustom2FontTtf',
+					'title'			=> __( 'Custom Font 2 | .ttf', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/ttf',
+					   'target_type' => 'text',
+					 )
+			);
+
+
+$wtrFontsCustom2FontSvg = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustom2FontSvg',
+					'title'			=> __( 'Custom Font 2 | .svg', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/svg',
+					   'target_type' => 'text',
+					 )
+			);
+
+$wtrFontsCustom2FontEot = new WTR_Upload( array(
+					'id'			=> 'wtrFontsCustom2FontEot',
+					'title'			=> __( 'Custom Font 2 | .eot', 'wtr_sht_framework' ),
+					'desc'			=> '',
+					'value'			=> '',
+					'default_value'	=> '',
+					'default_size'	=> 'full',
+					'info'			=> '',
+					'allow'			=> 'all',
+					'class'			=> 'ModalFields VideoSrc',
+					'mod'			=> 'custom_font',
+				),
+				array( 'filter_content' => 'font/eot',
+					   'target_type' => 'text',
+					 )
+			);
 
 //General: wtr_TranslateGeneralSection
 $wtr_TranslateTranslationSettings = new WTR_Radio( array(
@@ -3044,6 +3207,151 @@ $wtr_TranslateDailyScheduleSHTText2  = new WTR_Text( array(
 	)
 );
 
+$wtr_TranslateDailyScheduleMonth01 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth01',
+		'class'			=> '',
+		'title'			=> __( 'Jan', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth01' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth02 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth02',
+		'class'			=> '',
+		'title'			=> __( 'Feb', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth02' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth03 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth03',
+		'class'			=> '',
+		'title'			=> __( 'Mar', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth03' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth04 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth04',
+		'class'			=> '',
+		'title'			=> __( 'Apr', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth04' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth05 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth05',
+		'class'			=> '',
+		'title'			=> __( 'May', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth05' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth06 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth06',
+		'class'			=> '',
+		'title'			=> __( 'Jun', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth06' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth07 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth07',
+		'class'			=> '',
+		'title'			=> __( 'Jul', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth07' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth08 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth08',
+		'class'			=> '',
+		'title'			=> __( 'Aug', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth08' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth09 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth09',
+		'class'			=> '',
+		'title'			=> __( 'Sep', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth09' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth10 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth10',
+		'class'			=> '',
+		'title'			=> __( 'Oct', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth10' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth11 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth11',
+		'class'			=> '',
+		'title'			=> __( 'Nov', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth11' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+$wtr_TranslateDailyScheduleMonth12 = new WTR_Text( array(
+		'id'			=> 'wtr_TranslateDailyScheduleMonth12',
+		'class'			=> '',
+		'title'			=> __( 'Dec', 'wtr_framework' ),
+		'desc'			=> __( 'Shortcode Daily Schedule', 'wtr_framework' ),
+		'value'			=> '',
+		'default_value' => $wtr_translate[ 'wtr_TranslateDailyScheduleMonth12' ],
+		'info'			=> '',
+		'allow'			=> 'all',
+	)
+);
+
+
 //Widgets: wtr_TranslateWidgetsSection
 $wtr_TranslateWidgetsSectionTrainerMeet = new WTR_Text( array(
 		'id'			=> 'wtr_TranslateWidgetsSectionTrainerMeet',
@@ -3351,6 +3659,18 @@ $wtr_FontFontFamilySection = new WTR_Section( array(
 			$wtr_FontsFont_1,
 			$wtr_FontsFont_2,
 			$wtrFontsGoogleFontSubset,
+			$wtrFontsCustomFontName,
+			$wtrFontsCustomFontWoff,
+			$wtrFontsCustomFontEot,
+			$wtrFontsCustomFontSvg,
+			$wtrFontsCustomFontTtf,
+			$wtrFontsCustomFontWoff,
+			$wtrFontsCustom2FontName,
+			$wtrFontsCustom2FontWoff,
+			$wtrFontsCustom2FontEot,
+			$wtrFontsCustom2FontSvg,
+			$wtrFontsCustom2FontTtf,
+			$wtrFontsCustom2FontWoff,
 		),
 	)
 );
@@ -3536,7 +3856,19 @@ $wtr_TranslateShortcodeSection = new WTR_Section( array(
 			$wtr_TranslateClassesSHTPassPrice,
 			$wtr_TranslateClassesSHTSBSStep,
 			$wtr_TranslateDailyScheduleSHTText,
-			$wtr_TranslateDailyScheduleSHTText2
+			$wtr_TranslateDailyScheduleSHTText2,
+			$wtr_TranslateDailyScheduleMonth01,
+			$wtr_TranslateDailyScheduleMonth02,
+			$wtr_TranslateDailyScheduleMonth03,
+			$wtr_TranslateDailyScheduleMonth04,
+			$wtr_TranslateDailyScheduleMonth05,
+			$wtr_TranslateDailyScheduleMonth06,
+			$wtr_TranslateDailyScheduleMonth07,
+			$wtr_TranslateDailyScheduleMonth08,
+			$wtr_TranslateDailyScheduleMonth09,
+			$wtr_TranslateDailyScheduleMonth10,
+			$wtr_TranslateDailyScheduleMonth11,
+			$wtr_TranslateDailyScheduleMonth12,
 		),
 	)
 );

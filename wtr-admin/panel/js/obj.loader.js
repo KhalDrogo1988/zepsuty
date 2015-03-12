@@ -406,7 +406,7 @@ var WtrObjsSystem = function(){};
 		_objs_select : function()
 		{
 			// Select
-			$( 'select' ).not( '.wtrSelectMultiple' ).change(function () {
+			$( '.wtrFieldsContainer select, .wtrPageOptionsTabsContent select, .wtrUIContener select' ).not( '.wtrSelectMultiple' ).change(function () {
 				var str = '';
 				str = $( this ).find( ':selected' ).text();
 
